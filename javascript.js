@@ -1,36 +1,24 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta name="viewport" content="width=device-width">
-    <title>
-        JS примеры
-    </title>
-</head>
-
-<body>
-    <script type="text/javascript" src="javascript.js">
-        //Создайте 3 переменные   x = 6, y = 15, и z = 4: 
+//Создайте 3 переменные   x = 6, y = 15, и z = 4: 
         //Выполните и отобразите результат следующих операций для этих переменных:  
-        //· x += y - x++ * z ; 
-        //· z = -- x - y * 5 ; 
-        //· y /= x + 5 % z ;  
-        //· z = x++ + y * 5 ; 
-        //· x = y - x++ * z ; 
-        //let x = 6;
-        //let y = 15;
-        //let z = 4;
-        //x += y - (x++) * z;
-        //document.write("<p>x=" + x);
-        //z = (--x) - y * 5;
-        //document.write("<p>z=" + z);
-        //y /= x + 5 % z;
-        //document.write("<p>y=" + y);
-        //z = (x++) + y * 5;
-        //document.write("<p>z=" + z);
-        //x = y - (x++) * z
-        //document.write("<p>x=" + x);
-        //document.write("<hr/>");
+        // //· x += y - x++ * z ; 
+        // //· z = -- x - y * 5 ; 
+        // //· y /= x + 5 % z ;  
+        // //· z = x++ + y * 5 ; 
+        // //· x = y - x++ * z ; 
+        // //let x = 6;
+        // //let y = 15;
+        // //let z = 4;
+        // //x += y - (x++) * z;
+        // //document.write("<p>x=" + x);
+        // //z = (--x) - y * 5;
+        // //document.write("<p>z=" + z);
+        // //y /= x + 5 % z;
+        // //document.write("<p>y=" + y);
+        // //z = (x++) + y * 5;
+        // //document.write("<p>z=" + z);
+        // //x = y - (x++) * z
+        // //document.write("<p>x=" + x);
+        // //document.write("<hr/>");
 
         //Вычислите среднее арифметическое трех целочисленных значений и выведите его на экран.
         //let n1= parseInt(prompt("Первое число"));
@@ -172,9 +160,3 @@
             nnn--;
             kkk++;    
         }*/
-
-    </script>
-
-</body>
-
-</html>
