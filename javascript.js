@@ -168,19 +168,32 @@ for (i = 0; i < l-1; i++) {
 //Создать в объекте «Приложение», вложенные объекты, 
 //«Заголовок, Тело, Футер, Дата». Создать методы 
 //для заполнения и отображения документа. 
-doc ={
-    head;
-    body;
-    footer;
-    data;
-    add = function (a, b, c, d) {
+
+/*
+let Doc = {
+    head: "",
+    body: "",
+    footer: "",
+    data: "",
+    appendix: {
+        head: "",
+        body: "",
+        footer: "",
+        data: ""
+    },
+    add: function (a, b, c, d) {
         this.head = a;
         this.body = b;
         this.footer = c;
         this.data = d;
-
+        this.appendix.head = head;
+        this.appendix.body = this.body;
+        this.appendix.footer = this.footer;
+        this.appendix.data = this.data;
+    },
+    show: function () {
+        document.write(this.head + this.body + this.footer + this.data + this.appendix.head + this.appendix.body + this.appendix.footer + this.appendix.data);
     }
 }
-let a = new doc();
-a.Add("q", "w", "e", "r");
-document.write(a.head + " " + a.body + " " + a.footer + " " + a.data);
+Doc.add("1", "2", "3", "4", "5", "6", "7", "8");
+Doc.show();*/
