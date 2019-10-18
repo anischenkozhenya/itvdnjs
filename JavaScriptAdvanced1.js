@@ -49,18 +49,17 @@ document.write("<hr>");
 имена выберите произвольно.
 */
 function Myclass(x){
-    this.x=x;
-    this.InnerClass=function() {
-        this.Method=function() {   
-            document.write("qwe")         
+    this.name=x;
+    function InnerClass(){
+        this.Method=function() {
+            document.write("!!!");
         }
     }
-    this.Method=function () {        
-    }
 }
-let instance=new Myclass("wer");
+let instance= new Myclass("f");
 instance.InnerClass.Method();
 
+////////////////////////////////////////////////////////////////////////////////
 /*
 Задание 2
 Разработайте функцию-конструктор, 
@@ -68,28 +67,53 @@ instance.InnerClass.Method();
 создайте массив объектов и реализуйте функцию, 
 которая будет сортировать элементы массива по 
 значению свойства Age по возрастанию или по убыванию.
- */
 
+function Human(age) {
+    this.Age = parseInt(age);
+}
+let b = new Human(21);
+let a = new Human(12);
+let c = new Human(14);
+let d = new Human(1);
+let e = new Human(15);
+let f = new Human(40);
+let humans = [a, b, c, d, e, f];
+humans.sort(function compare(a, b) {
+    if (a.Age < b.Age) {
+        return -1;
+    }
+    if (a.Age > b.Age) {
+        return 1;
+    }
+    return 0;
+});
+for (let i = 0; i < humans.length; i++) {
+    document.write(humans[i].Age + "<hr>");
+}
+*/
 
-
-
-
+///////////////////////////////////////////////////////////////////////////////
 /*
 Задание 3
-Разработайте функцию-конструктор, 
-которая будет создавать объект Human(человек) 
-добавьте на свое усмотрение свойства и методы 
-в этот объект. Подумайте какие методы и свойства 
+Разработайте функцию-конструктор,
+которая будет создавать объект Human(человек)
+добавьте на свое усмотрение свойства и методы
+в этот объект. Подумайте какие методы и свойства
 следует сделать уровня экземпляра, а какие уровня
 функции-конструктора.
+
  */
-
-
-
-
-
+//////////////////////////////////////////////////////////////////////////////
 /*
 Задание 4
-Создайте пример демонстрирующий назначение метода 
+Создайте пример демонстрирующий назначение метода
 toString()
+function Class(name) {
+    this.Name=name;
+    this.toString=function() {
+        return "hello "+this.Name+"!<hr>";
+    }
+}
+let instance=new Class("Jenua");
+document.write(instance.toString());
 */
