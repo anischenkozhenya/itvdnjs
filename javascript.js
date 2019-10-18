@@ -162,6 +162,214 @@ for (i = 0; i < l-1; i++) {
 }*/
 
 
+/*
+        Требуется: Создать массив размерностью N элементов, заполнить его произвольными целыми
+        значениями. Вывести наибольшее значение массива, наименьшее значение массива, общую сумму
+        элементов, среднее арифметическое всех элементов, вывести все нечетные значения.
+        let l=parseInt(prompt("Длина массива"));
+        let r=new Array(l);
+
+        let sum=0;
+        let sa;
+        for (let i = 0; i < r.length; i++) {
+            r[i] = parseInt(prompt("ВВедите число"));
+            sum+=r[i];
+        }
+        sa=sum/l;
+        let min=r[0];
+        let max=r[0];
+        document.write("<hr/>");
+        for (let i = 0; i < r.length; i++) {
+            document.write("<p>"+r[i]);
+            if(r[i]<min){
+                min=r[i];
+            }
+            if(r[i]>max){
+                max=r[i];
+            }
+        }
+        document.write("<hr/>");
+        document.write("<p> sum"+sum);
+            document.write("<hr/>");
+        document.write("<p> min"+min);
+            document.write("<hr/>");
+        document.write("<p> max"+max);
+            document.write("<hr/>");
+        document.write("<p> sa"+sa);
+            document.write("<hr/>");
+        for (let i = 0; i < r.length; i++) {
+
+            if(r[i]%2==1){
+            document.write("<p>"+r[i]);
+            }
+
+        }
+        document.write("<hr/>");
+        */
+
+
+
+        /*
+        Требуется: Создать двумерный массив элементов размерностью 5х5 и заполнить его произвольными
+        целочисленными значениями. По главной диагонали все числа со знаком (-) заменить на 0, а числа со
+        знаком (+) на число 1.
+
+        let arr =new Array();
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min; //Максимум не включается, минимум включается
+        }
+        for (let i = 0; i < 5; i++) {
+            arr.push([]);
+            for (let j = 0; j < 5; j++) {
+                arr[i].push(getRandomInt(-100, 100));
+            }
+        }
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 5; j++) {
+
+
+                document.write(arr[i][j]+" ");
+            }
+            document.write("<br>");
+        }document.write("<hr/>");
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 5; j++) {
+                if (i==j) {
+                    if (arr[i][j] < 0){
+                        arr[i][j] = 0;
+                    }else {
+                        arr[i][j] = 1;
+                    }
+                }
+                document.write(arr[i][j]+" ");
+            }
+            document.write("<br/>");
+        }*/
+
+        //Создайте массив размерностью N элементов, выведите все элементы массива в обратном порядке.
+        /*let k= new  Array();
+        k=[1,2,3,4,5,6,7,8,9,0,100]
+        for (let i = k.length-1; i >= 0; i--) {
+            document.write(k[i]+" ");
+
+        }*/
+        /* Создайте метод с именем Calculate, который принимает в качестве параметров три целочисленных
+         значения и выводит на экран среднее арифметическое этих параметров.
+         Самостоятельная деятельность учащегося
+         let Calculate=function(a,b,c){
+             return (a+b+c)/3;
+         }
+         document.write( Calculate(100,200,550));
+        */
+
+
+
+
+
+        /*
+        Создайте четыре функции для арифметических действий: (Add – сложение, Sub – вычитание, Mul –
+        умножение, Div – деление). Каждая функция должна принимать два параметра и выводить на экран
+        результат вычисления. Функция деления должна делать проверку деления на ноль. Пользователь
+        вводит значения, над которыми хочет произвести операцию и выбрать саму операцию.
+        let Add=function(a,b){
+            return a+b;
+        }
+        let Sub=function(a,b){
+           return a-b;
+        }
+        let Mul=function(a,b){
+            return a*b;
+        }
+        let Div=function(a,b){
+            if(b!=0){
+              return  a/b;
+            }
+        }
+        let a=100;
+        let b=20;
+
+        document.write(Add(a,b)+"<hr/>");
+
+        document.write(Sub(a,b)+"<hr/>");
+
+        document.write(Mul(a,b)+"<hr/>");
+
+        document.write(Div(a,b)+"<hr/>");
+        */
+
+
+
+        /*
+        Напишите функцию, которая будет принимать число и определять:
+        1. Является ли введенное число положительным или отрицательным.
+        2. Является ли оно простым
+        3. Делится ли оно на 2, 5, 3, 6, 9 без остатка
+        let f = function (p) {
+            let bool;
+            let limit = Math.sqrt(p);
+            if (p < 2) {
+                bool = false;
+            } else
+                if (p == 2) {
+                    bool = true;
+                } else
+                    if (p % 2 == 0) {
+                        bool = false;
+                        document.write(a + " делится на 2<br>");
+                    } else { }
+            for (let i = 3; i <= limit; i += 2) {
+                if ((p % i) == 0) {
+                    bool = false;
+                }
+                else {
+                    bool = true;
+                }
+            }
+            if (p % 3 == 0) {
+                document.write(a + " делится на 3<br>");
+            }
+            if (p % 6 == 0) {
+                document.write(a + " делится на 6<br>");
+            }
+            if (p % 9 == 0) {
+                document.write(a + " делится на 9<br>");
+            }
+            if (p % 5 == 0) {
+                document.write(a + " делится на 5<br>");
+                bool = false;
+            }
+            if (bool == true) {
+                document.write(a + " Simple");
+            } else {
+                document.write(a + " Not Simple");
+            }
+        }
+        let a = parseInt(prompt("число"));
+        f(a);*/
+
+
+
+        /*Создать объект «Менеджер» с помощью блока инициализации, задать свойства «Имя, Фамилия,
+        возраст …».
+        Создать объект «Секретарь» с помощью конструктора, задать свойства «Имя, Фамилия, возраст …».
+        
+        let Manager={firstName:"Женя",lastName:"Анищенко",Age:15}
+        
+        document.write(Manager.firstName+" "+Manager.lastName+" "+Manager.Age+"<br><hr>");
+        
+        function Secretar(firstName,lastName,Age){
+            this.firstName=firstName;
+            this.lastName=lastName;
+            this.Age=Age;
+        }
+        let NewSecretar=new Secretar("Дима","Постоялкин",25);
+        
+        document.write(NewSecretar.firstName+" "+NewSecretar.lastName+" "+NewSecretar.Age+"<br>");
+       */
+
+
 //Создать объект «Документ», в котором определить
 // свойства «Заголовок, Тело, Футер, Дата». 
 //Создать в объекте вложенный объект – «Приложение». 
