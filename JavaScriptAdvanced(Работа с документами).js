@@ -55,7 +55,22 @@ window.onload=function () {
 Создайте страницу с кнопкой, при нажатии по кнопке на странице 
 должен создаваться параграф с произвольным текстом. 
 После создания 10 параграфов все они должны быть удалены. 
+
+let Method5=function(){
+    let elem=document.getElementsByTagName("p");
+    let divs=document.getElementById("div");
+    if (elem.length<10) {
+        let p =document.createElement("p");
+        p.innerHTML="параграф";
+        divs.appendChild(p);
+    }else{
+        for (let i = 9; i >= 0; i--) {
+           divs.removeChild(elem[i]);  
+        }
+    }
+}
 */
+/////////////////////////////////////////////////////////////////////
 /* 
 Задание 3  
 Разработайте модуль, который будет содержать функцию для 
@@ -63,4 +78,22 @@ window.onload=function () {
 атрибуте с именем class. Пример использование модуля. 
 var arr = MyQuery.FindClass(“redButton”); - 
 возвращает массив элементов с атрибутом class=”redButton” 
+
+function redButton() {
+    function MyQuery() {        
+    }
+    MyQuery.FindClass = function(a) {
+        this.redBtn = document.getElementsByClassName(a);        
+        this.arr =new Array();
+        for (let i = 0; i < this.redBtn.length; i++) {
+            this.arr[i] = this.redBtn[i].tagName;            
+        }        
+        return this.arr;
+    }
+    let arr1 =MyQuery.FindClass("redButton"); 
+    let out = document.getElementById("out"); 
+    for (let i = 0; i < arr1.length; i++) {        
+        out.innerHTML+=arr1[i]+" ";
+    }
+}
 */
