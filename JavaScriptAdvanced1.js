@@ -47,25 +47,32 @@ document.write("<hr>");
 свойством функции-конструктора, с методом
 экземпляра и методом функции-конструктора
 имена выберите произвольно.
-*/
-function Myclass(x){
-    this.name=x;
-    function InnerClass(){
-        this.Method=function() {
-            document.write("!!!");
-        }
+
+
+function Myclass(params) {
+    this.X=params;
+    this.Method=function(){
+        document.write("Method");
     }
 }
-let instance= new Myclass("f");
-instance.InnerClass.Method();
+Myclass.Y=100;
+Myclass.Method2=function(){
+    document.write("Method2");
+}
+
+var instance=new Myclass();
+instance.Method();
+document.write("<hr>");
+Myclass.Method2();
+*/
 
 ////////////////////////////////////////////////////////////////////////////////
 /*
 Задание 2
-Разработайте функцию-конструктор, 
-которая будет создавать объект Human(человек) 
-создайте массив объектов и реализуйте функцию, 
-которая будет сортировать элементы массива по 
+Разработайте функцию-конструктор,
+которая будет создавать объект Human(человек)
+создайте массив объектов и реализуйте функцию,
+которая будет сортировать элементы массива по
 значению свойства Age по возрастанию или по убыванию.
 
 function Human(age) {
@@ -102,7 +109,26 @@ for (let i = 0; i < humans.length; i++) {
 следует сделать уровня экземпляра, а какие уровня
 функции-конструктора.
 
+function Human(Fname,Lname,Age) {
+    this.Firstname=Fname;
+    this.Lastname=Lname;
+    this.Age=parseInt(Age);       
+}
+Human.prototype.toString=function(){
+    return this.Firstname+" "+this.Lastname+" age:"+this.Age;
+}
+Human.prototype.Fullname=function(){
+    return this.Firstname+" "+this.Lastname;
+}
+Human.prototype.SayHello=function(){
+    document.write("Hello "+this.Fullname()+"!!!");
+}
+
+let me= new Human("Женя","Анищенко",13);
+document.write(me.Firstname+"<br>"+me.toString()+"<br>");
+me.SayHello();
  */
+
 //////////////////////////////////////////////////////////////////////////////
 /*
 Задание 4
