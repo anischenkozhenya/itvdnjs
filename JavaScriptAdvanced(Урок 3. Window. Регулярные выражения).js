@@ -181,4 +181,16 @@ window.onload = function () {
 вводит текст в поле ввода и нажимает
 на кнопку. После чего в элементе страниц,
 отображается бегущая строка с введенным текстом.
+
+window.onload = function () {
+    let p = document.getElementById("pstring");
+    let d = null;
+    document.getElementById("stringbutton").onclick = function () {
+        let str = document.getElementById("string").value;
+        d = setInterval(function () {
+            str = str[str.length - 1] + str.substring(0, str.length - 1);
+            p.innerHTML = str;
+        }, 100);
+    }
+}
 */
