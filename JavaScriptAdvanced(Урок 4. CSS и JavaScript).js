@@ -39,32 +39,59 @@ window.onload=function(){
 или «загаданное значение меньше введенного вами». 
 Подумайте как можно применить DHTML в таком  приложении. 
 */
-
+window.onload = function () {
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+    let myinp;
+    let numbr = getRandomInt(100);
+    let mybd = this.document.getElementsByTagName("body")[0];
+    let btn = this.document.createElement("input");
+    btn.type = "button";
+    btn.value = "угадал?"
+    let p = this.document.createElement("p");
+    let txt = this.document.createElement("input");
+    btn.onclick = function () {
+        myinp = txt.value;
+        if (numbr > myinp) {
+            p.innerHTML = "загаданное значение больше введенного вами";
+        }
+        if (numbr < myinp) {
+            p.innerHTML = "загаданное значение меньше введенного вами";
+        }
+        if (numbr == myinp) {
+            p.innerHTML = "Угадал";
+        }
+    }
+    mybd.appendChild(btn);
+    mybd.appendChild(p);
+    mybd.appendChild(txt);
+}
 
 /*
-Задание 2 
-Создайте страницу для авторизации. На странице 
-должны находиться поля вводов для логина и пароля, 
-кнопка «Вход» и checkbox «Запомнить меня». 
-С помощью CSS, который расположен в отдельном файле, 
-выровняйте форму для авторизации по центру страницы. 
-Разработайте сценарий, который будет проверять 
-срабатывать по нажатию на кнопку «Вход». Сценарий должен 
-реализовывать следующее поведение: 
-· Если при нажатии на кнопку поля ввода пустые – 
-выводиться сообщение (в теле страницы, не через alert) 
-«Вы не заполнили поля логин и пароль», также поля вводов 
-должны получить красный фон. 
+Задание 2
+Создайте страницу для авторизации. На странице
+должны находиться поля вводов для логина и пароля,
+кнопка «Вход» и checkbox «Запомнить меня».
+С помощью CSS, который расположен в отдельном файле,
+выровняйте форму для авторизации по центру страницы.
+Разработайте сценарий, который будет проверять
+срабатывать по нажатию на кнопку «Вход». Сценарий должен
+реализовывать следующее поведение:
+· Если при нажатии на кнопку поля ввода пустые –
+выводиться сообщение (в теле страницы, не через alert)
+«Вы не заполнили поля логин и пароль», также поля вводов
+должны получить красный фон.
 · Если введен логин admin и пароль 12345 то отобразить
- пользователю зеленым цветом сообщение «Вы авторизированы». 
- 
+ пользователю зеленым цветом сообщение «Вы авторизированы».
+
 
  window.onload=function(){
     document.getElementsByTagName("body")[0].style.height=(window.innerHeight-50)+"px";
     let Mybody = this.document.getElementsByClassName("main")[0];
     let msgnp=document.createElement("p");
     msgnp.innerHTML="-";
-    Mybody.appendChild(msgnp);    
+    Mybody.appendChild(msgnp);
     let lgn=document.createElement("input");
     lgn.type="text";
     Mybody.appendChild(lgn);
@@ -85,12 +112,12 @@ window.onload=function(){
             msgnp.innerHTML="Вы не заполнили поля логин и пароль";
             lgn.style.backgroundColor="#f10303cc";
             psw.style.backgroundColor="#f10303cc";
-        } 
+        }
         if (lgn.value=="admin"||psw.value=="12345") {
             msgnp.innerHTML="Вы авторизированы";
             lgn.style.backgroundColor="#79f1038f";
             psw.style.backgroundColor="#79f1038f";
-        }        
+        }
     }
     Mybody.appendChild(btnlogin);
     let chk=document.createElement("input");
@@ -103,11 +130,11 @@ window.onload=function(){
  }*/
  ////////////////////////////////////////////////////////
 /*
-Задание 3 
-Разработайте сценарий, который каждую секунду будет 
-случайным образом менять положение трех элементов div. 
-Задайте элементам фиксированную ширину и высоту и 
-запустите сценарий при загрузке страницы. 
+Задание 3
+Разработайте сценарий, который каждую секунду будет
+случайным образом менять положение трех элементов div.
+Задайте элементам фиксированную ширину и высоту и
+запустите сценарий при загрузке страницы.
 
 window.onload = function () {
     let Mybody = this.document.getElementsByTagName("body")[0];
@@ -137,8 +164,8 @@ window.onload = function () {
     Mybody.appendChild(div3);
     function getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max));
-    }    
-    setInterval(function () {        
+    }
+    setInterval(function () {
         div1.style.left = getRandomInt(window.innerWidth-100)+"px";
         div1.style.top =  getRandomInt(window.innerHeight-100)+"px";
         div2.style.left =  getRandomInt(window.innerWidth-100)+"px";
@@ -162,7 +189,7 @@ window.onload = function () {
     let bntUp = this.document.createElement("input");
     let bntLeft = this.document.createElement("input");
     let bntrigth = this.document.createElement("input");
-    bntDown.type = "button";    
+    bntDown.type = "button";
     bntDown.id = "btn1";
     bntDown.value = "Кнопка Вниз"
     bntUp.type = "button";
@@ -177,7 +204,7 @@ window.onload = function () {
     let newdiv = this.document.createElement("div");
     newdiv.innerHTML = "какой-то текст";
     newdiv.style.position = "absolute";
-    let p = this.document.createElement("p");    
+    let p = this.document.createElement("p");
     newdiv.appendChild(p);
     Mybody.appendChild(bntDown);
     Mybody.appendChild(bntUp);
@@ -190,7 +217,7 @@ window.onload = function () {
         if (window.innerHeight + 100 > topc) {
             topc += 100;
             newdiv.style.top = topc + "px";
-        }        
+        }
     }
     bntUp.onclick = function () {
         if (!(topc - 100 < 0)) {
@@ -199,13 +226,13 @@ window.onload = function () {
         }
     }
     bntLeft.onclick = function () {
-        if (!(leftc-100<0)) {            
+        if (!(leftc-100<0)) {
             leftc -= 100;
             newdiv.style.left = leftc + "px";
         }
     }
     bntrigth.onclick = function () {
-        if (!(leftc+100>window.innerWidth)) {            
+        if (!(leftc+100>window.innerWidth)) {
             leftc += 100;
             newdiv.style.left = leftc + "px";
         }
