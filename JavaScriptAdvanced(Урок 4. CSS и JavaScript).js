@@ -38,7 +38,7 @@ window.onload=function(){
 «загаданное значение больше введенного вами» 
 или «загаданное значение меньше введенного вами». 
 Подумайте как можно применить DHTML в таком  приложении. 
-*/
+
 window.onload = function () {
     function getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max));
@@ -67,7 +67,7 @@ window.onload = function () {
     mybd.appendChild(p);
     mybd.appendChild(txt);
 }
-
+*/
 /*
 Задание 2
 Создайте страницу для авторизации. На странице
