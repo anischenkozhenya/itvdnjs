@@ -183,6 +183,8 @@ window.onload = function () {
 не «сохранив» данные в поле ввода, должно
 запускаться окно, которое потребует
 подтверждения операции закрытия окна.
+
+не поддерживается!!!
 */
 
 /*
@@ -255,7 +257,7 @@ window.onload=function(){
 Ctrl + S, «выбрано все» при нажатии на
 Ctrl + A и «сохранено все» при нажатии
 на комбинацию Ctrl + Shift + S
-*/
+
 window.onload = function () {
     let bd = this.document.getElementsByTagName("body")[0];
     let s = false;
@@ -296,4 +298,4 @@ window.onload = function () {
             this.s = false;
         }
     }, true);
-}
+}*/
