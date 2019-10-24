@@ -28,3 +28,8 @@ form select{
     position: absolute;
     left: 150px;    
 }
+form span{
+    position: absolute;
+    left: 350px;    
+    opacity: 0;
+}
