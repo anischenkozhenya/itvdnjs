@@ -13,12 +13,7 @@ window.onload = function () {
     let fname = this.document.task7.fname;
     let txtinput = this.document.getElementsByTagName("input");
     let pname = this.document.getElementsByTagName("span");
-    let lname = this.document.task7.lname;
-    let lgn = this.document.task7.lgn;
-    let password = this.document.task7.password;
-    let cpassword = this.document.task7.cpassword;
-    let email = this.document.task7.email;
-    let sex = this.document.task7.sex;
+    let pattern=new this.RegExp("\b[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,4}\b");    
     let watermark = "Введите данные";
     let ck = false;
     for (let i = 0; i < 6; i++) {
@@ -39,39 +34,41 @@ window.onload = function () {
         }
         txtinput[i].onblur = function () {
             if (txtinput[i].value == "") {
-                 initInput();
+                initInput();
             }
         }
     }
     ck = true;
     this.document.getElementById("res").addEventListener("click", function () {
-
     }, false);
+    let eml=this.document.getElementsByName("email")[0];    
     let msg = "";
     let ch = false;
     this.document.getElementsByName("reg")[0].addEventListener("click", function () {
         for (let i = 0; i < 6; i++) {
-            pname[i].style.opacity="0";
+            pname[i].style.opacity = "0";
             if (txtinput[i].value == "" || txtinput[i].value == watermark) {
                 msg += "Введены не все данные ";
-                ch=true;
-                pname[i].style.opacity="1";                
+                ch = true;
+                pname[i].style.opacity = "1";
             }
-        }
+        } 
+        if(pattern.test(eml.value)==false){
+            alert("sd");
+        }        
         if (document.getElementsByName("sex")[0].value != "Men" && document.getElementsByName("sex")[0].value != "Women") {
             msg += "Не выбран пол";
-            pname[6].style.opacity="1";
-            ch=true;
+            pname[6].style.opacity = "1";
+            ch = true;
         }
-        if (document.getElementsByName("password")[0].value!=document.getElementsByName("cpassword")[0].value) {
+        if (document.getElementsByName("password")[0].value != document.getElementsByName("cpassword")[0].value) {
             msg += "Пароли не совпадают";
-            ch=true;
+            ch = true;
         }
         if (ch) {
             //alert(msg);
-            ch=false;
+            ch = false;
         }
-        
         msg = "";
     }, false);
 }
