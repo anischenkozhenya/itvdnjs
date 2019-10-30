@@ -33,8 +33,14 @@ form select{
     left: 350px;    
     opacity: 0;
 }
-*/
+
 #form81{
     font-size: 1pt;
     background-color: white;
+}*/
+img{
+    width:100px;
+    margin: 1px;   
+    padding: 2px;
+    border: 30px solid white;
 }
