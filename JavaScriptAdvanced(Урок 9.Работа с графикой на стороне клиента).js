@@ -69,4 +69,30 @@ window.onload=function () {
 Используя элемент canvas, напишите модуль, с помощью которого
 на странице будет отображаться диаграмма в соответствии с
 данными переданными массивом в модуль.
-*/
+window.onload = function () {
+    let d92 = this.document.getElementById("d93");
+    let context = d92.getContext("2d");
+    let array = [10, 20, 40, 5, 80, 90, 10, 50, 54, 105];
+    createBarChart(d92, array, 1400, 500, "red")
+}
+function createBarChart(canvas, data, width, height, color) {
+    if (typeof canvas == "string") canvas = document.getElementById(canvas);
+    canvas.width = width;
+    canvas.height = height;
+    let context = canvas.getContext("2d");
+    let max = Number.NEGATIVE_INFINITY;
+    for (let i = 0; i < data.length; i++) {
+        if (max < data[i]) max = data[i];
+    }
+    let scale = height / max;
+    let barWidth = Math.floor(width / data.length);
+    for (let i = 0; i < data.length; i++) {
+
+        let barHeight = data[i] * scale,
+            x = barWidth * i,
+            y = height - barHeight;
+
+        context.fillStyle = color;
+        context.fillRect(x, y, barWidth - 2, barHeight);
+    }
+}*/
