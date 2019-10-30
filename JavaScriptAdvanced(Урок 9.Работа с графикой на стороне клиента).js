@@ -27,6 +27,20 @@ window.onload = function () {
 Задание 1
 Создайте страницу с тремя кнопками, при нажатии на каждую из
 кнопок должно меняться изображение выводимое на странице.
+
+window.onload=function(){
+    let btn91=document.getElementsByTagName("input");
+    let img91=document.getElementsByTagName("img")[0];
+    //alert(btn[0].getAttribute("imgsrc"));
+    function chooseimg(nameBtn) {
+        img91.setAttribute("src", nameBtn.getAttribute("imgsrc"));
+    }
+    for (let i = 0; i < btn91.length; i++) {
+        btn91[i].addEventListener("click",function () {
+            chooseimg(btn91[i]);
+        },false);
+    }
+}
 */
 /*
 Задание 2
