@@ -47,6 +47,22 @@ window.onload=function(){
 Создайте страницу-галерею. На странице должен выводиться список
 картинок preview небольших размеров. При нажатии на каждое
 изображение превью должно отображаться большое изображение.
+
+window.onload=function () {
+    let img92=document.getElementsByTagName("img");
+    let prevImg="";
+    for (let i = 0; i < img92.length; i++) {        
+        img92[i].addEventListener("click",function(){
+            img92[i].style.width="500px";
+            if(prevImg==""){
+                prevImg=img92[i];
+            }else{
+                prevImg.style.width="100px";
+                prevImg=img92[i];
+            }
+        },false);
+    }
+}
 */
 /*
 Задание 3
